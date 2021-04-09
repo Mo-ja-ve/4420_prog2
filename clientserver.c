@@ -35,10 +35,12 @@ int main(){
 
           result = strcmp(c_string, c_send);
 
+          printf("\n%d",result);
+
      }else{
           close(fd[WRITE]);
 
-          printf("server");
+          //printf("server");
      }
 
      return 0;
