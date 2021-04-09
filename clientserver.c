@@ -24,13 +24,27 @@ int main(){
      pipe(fd);
 
      if(fork() != 0){// client procsess
-          char c_string[100];
-          scanf("%s",c_string);
-          printf("%s", c_string);
 
           close(fd[READ]);
 
+          char c_string[100];
+          scanf("%s",c_string);
+          int c_str_size=0;
+          int c_str_or  =0;
+          while(c_string[c_str_size] != '\0'){
+               c_str_size++;
+               c_str_or = c_str_or || c_string[c_str_size];
+          }
+
+          if(c_str_or != 's'||'e'||'n'||'d'||':'){
+               printf("ERROR: incorect input");
+               return;
+          }else{
+               printf("%s", c_string);
+          }
+
      }else{
+          close(fd[WRITE]);
 
           printf("server");
      }
