@@ -31,15 +31,16 @@ int main(){
 
      if(fork() != 0){// client procsess
           close(fd[READ]);
-          string c_send = "send:";
+          char c_send = "send:\0";
           string c_exit = "EXIT";
-          string temp_s;
+          char temp_s[6];
           string c_string;
           msg_type_t typ;
           msg_t msg;
 
           cin >> c_string;
-          c_string.copy(temp_s,0,5);
+          size_t length = c_string.copy(temp_s,0,5);
+          temp_s[length] ='\0';
           if(temp_s == c_send){
                typ = REGULAR;
                msg.type = typ;
