@@ -27,17 +27,24 @@ int main(){
      pipe(fd);
      int result;
 
+
      if(fork() != 0){// client procsess
           close(fd[READ]);
           string c_send = "send:";
           string c_exit = "EXIT";
           string temp_s;
           string c_string;
+          enum msg_type_t typ;
+          msg_t msg;
 
           cin >> c_string;
           c_string.copy(temp_s,0,5);
           if(temp_s == c_send){
-               cout<<endl<<"okay!";
+               typ = REGULAR;
+               msg.type = typ;
+               strcpy(msg.message_text, c_string);
+               cout<<endl<<"msg txt "<<msg.message_text;
+               
           }else{
                cout<<endl<<"not okay";
           }
