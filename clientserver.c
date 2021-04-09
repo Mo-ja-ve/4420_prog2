@@ -2,6 +2,7 @@
 //#include "struct.h"
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
 
 #define MSG_LENGTH 100
 #define READ 0
@@ -22,21 +23,18 @@ int main(){
 
      int fd[2];
      pipe(fd);
+     int result;
 
      if(fork() != 0){// client procsess
 
           close(fd[READ]);
 
           char c_string[100];
+          char c_send[] = "send";
           scanf("%s",c_string);
-          int c_str_size=0;
-          int c_str_or  =0;
-          while(c_string[c_str_size] != '\0'){
-               c_str_size++;
-               c_str_or = c_str_or || c_string[c_str_size];
-          }
-          printf("\n%d", c_str_or);
-          printf("\n%d", 's'||'e'||'n'||'d'||':');
+
+          result = strcmp(c_string, c_send);
+
           if(c_str_or != 's'||'e'||'n'||'d'||':'){
                printf("ERROR: incorect input");
                return 0;
