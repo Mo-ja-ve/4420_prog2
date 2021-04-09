@@ -38,7 +38,7 @@ int main(){
 
           if(c_str_or != 's'||'e'||'n'||'d'||':'){
                printf("ERROR: incorect input");
-               return;
+               return 0;
           }else{
                printf("%s", c_string);
           }
