@@ -35,13 +35,6 @@ int main(){
 
           result = strcmp(c_string, c_send);
 
-          if(c_str_or != 's'||'e'||'n'||'d'||':'){
-               printf("ERROR: incorect input");
-               return 0;
-          }else{
-               printf("%s", c_string);
-          }
-
      }else{
           close(fd[WRITE]);
 
