@@ -2,7 +2,7 @@
 //#include "struct.h"
 #include <fcntl.h>
 #include <unistd.h>
-#include <string.h>
+#include <string>
 
 #define MSG_LENGTH 100
 #define READ 0
@@ -44,7 +44,7 @@ int main(){
                msg.type = typ;
                strcpy(msg.message_text, c_string);
                cout<<endl<<"msg txt "<<msg.message_text;
-               
+
           }else{
                cout<<endl<<"not okay";
           }
