@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string>
+#include "iostream.h"
 
 #define MSG_LENGTH 100
 #define READ 0
@@ -34,7 +35,7 @@ int main(){
           string c_exit = "EXIT";
           string temp_s;
           string c_string;
-          enum msg_type_t typ;
+          msg_type_t typ;
           msg_t msg;
 
           cin >> c_string;
