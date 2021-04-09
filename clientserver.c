@@ -8,6 +8,8 @@
 #define READ 0
 #define WRITE 1
 
+using namespace std;
+
 typedef enum {
      REGULAR,
      COMMAND
@@ -26,16 +28,20 @@ int main(){
      int result;
 
      if(fork() != 0){// client procsess
-
           close(fd[READ]);
+          string c_send = "send:";
+          string c_exit = "EXIT";
+          string temp_s;
+          string c_string;
 
-          char c_string[100];
-          char c_send[] = "send:";
-          scanf("%s",c_string);
+          cin >> c_string;
+          c_string.copy(temp_s,0,5);
+          if(temp_s == c_send){
+               cout<<endl<<"okay!";
+          }else{
+               cout<<endl<<"not okay";
+          }
 
-          result = strcmp(c_string, c_send);
-
-          printf("\n%d", result);
 
      }else{
           close(fd[WRITE]);
