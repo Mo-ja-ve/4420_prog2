@@ -35,7 +35,8 @@ int main(){
                c_str_size++;
                c_str_or = c_str_or || c_string[c_str_size];
           }
-
+          printf("\n%d", c_str_or);
+          printf("\n%d", 's'||'e'||'n'||'d'||':');
           if(c_str_or != 's'||'e'||'n'||'d'||':'){
                printf("ERROR: incorect input");
                return 0;
