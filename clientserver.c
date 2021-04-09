@@ -30,12 +30,12 @@ int main(){
           close(fd[READ]);
 
           char c_string[100];
-          char c_send[] = "send";
+          char c_send[] = "send:";
           scanf("%s",c_string);
 
           result = strcmp(c_string, c_send);
 
-          printf("\n%d",result);
+          printf("\n%d", result);
 
      }else{
           close(fd[WRITE]);
