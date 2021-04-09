@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "struct.h"
+//#include "struct.h"
 #include <fcntl.h>
 #include <unistd.h>
 
